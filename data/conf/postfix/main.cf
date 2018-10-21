@@ -131,3 +131,8 @@ smtp_sasl_mechanism_filter = plain, login
 smtp_tls_policy_maps=proxy:mysql:/opt/postfix/conf/sql/mysql_tls_policy_override_maps.cf
 smtp_header_checks = pcre:/opt/postfix/conf/mailcow_anonymize_headers.pcre
 mail_name = Postcow
+
+transport_maps = proxy:hash:/opt/postfix/conf/transport
+slow_destination_recipient_limit = 20
+slow_destination_concurrency_limit = 2
+

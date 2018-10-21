@@ -93,3 +93,8 @@ watchdog_discard    unix  -       -       n       -       -       discard
    -o syslog_name=watchdog
 
 # end watchdog-specific
+slow       unix  -       -       n       -       -       smtp
+   -o syslog_name=postfix-slow
+   -o smtp_destination_concurrency_limit=3
+   -o slow_destination_rate_delay=1
+
